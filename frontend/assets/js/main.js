@@ -9,9 +9,9 @@ const configuredApiBase = document
   .replace(/\/$/, "");
 const API_BASE =
   configuredApiBase ||
-  (localPage && window.location.port !== "8080"
-    ? "https://gls-construction-backend.onrender.com/api"
-    : "/api");
+  (localPage
+    ? "http://localhost:8080/api"
+    : "https://gls-construction-backend.onrender.com/api");
 const placeholder = "Project information coming soon.";
 let csrfTokenPromise;
 
