@@ -1,5 +1,5 @@
 // GLS CONSTRUCTION - Main JavaScript
-
+// Production API configuration
 const localPage =
   window.location.protocol === "file:" ||
   ["localhost", "127.0.0.1"].includes(window.location.hostname);
@@ -10,7 +10,7 @@ const configuredApiBase = document
 const API_BASE =
   configuredApiBase ||
   (localPage && window.location.port !== "8080"
-    ? "http://localhost:8080/api"
+    ? "https://gls-construction-backend.onrender.com/api"
     : "/api");
 const placeholder = "Project information coming soon.";
 let csrfTokenPromise;
