@@ -1,0 +1,1877 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="gls-api-base" content="" />
+
+    <!-- SEO & Meta Tags -->
+    <title>GLS Construction | Building & Renovation in Dharmapuri</title>
+    <meta
+      name="description"
+      content="Professional construction and renovation services in Dharmapuri, Tamil Nadu. From planning and estimation to complete construction and handover."
+    />
+
+    <link
+      rel="shortcut icon"
+      href="assets/icons/favicon-32.png?v=2"
+      type="image/png"
+    />
+    <link
+      rel="icon"
+      href="assets/icons/favicon-32.png?v=2"
+      type="image/png"
+      sizes="32x32"
+    />
+    <link
+      rel="icon"
+      href="assets/icons/favicon-16.png?v=2"
+      type="image/png"
+      sizes="16x16"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="assets/icons/apple-touch-icon.png?v=2"
+      sizes="180x180"
+    />
+
+    <!-- Google Fonts: Cormorant Garamond (Headings) & DM Sans (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <style>
+      #admin-area {
+        background: var(--bg-warm-white);
+        min-height: 100vh;
+        padding: 42px 20px 60px;
+      }
+      .admin-shell {
+        max-width: 1180px;
+        margin: 0 auto;
+      }
+      .admin-header,
+      .admin-panel {
+        background: #fff;
+        border: 1px solid #e5e7eb;
+        border-radius: 4px;
+        padding: 30px;
+        margin-bottom: 24px;
+        box-shadow: 0 8px 24px rgba(26, 26, 26, 0.04);
+      }
+      .admin-header {
+        background: var(--primary-charcoal);
+        color: #fff;
+        border-color: var(--primary-charcoal);
+        padding: 34px;
+      }
+      .admin-header h1 {
+        color: #fff;
+      }
+      .admin-header p {
+        color: #d1d5db;
+      }
+      .admin-header .btn-outline-light {
+        border-width: 2px;
+        font-weight: 600;
+      }
+      .admin-panel h2 {
+        margin-bottom: 22px;
+        font-size: 1.35rem;
+      }
+      .admin-panel .form-label {
+        color: var(--primary-charcoal);
+        font-size: 0.86rem;
+        font-weight: 600;
+        margin-bottom: 7px;
+      }
+      .admin-panel .form-control,
+      .admin-panel .form-select {
+        min-height: 44px;
+        border-color: #d7dce0;
+        border-radius: 4px;
+      }
+      .admin-panel .form-control:focus,
+      .admin-panel .form-select:focus {
+        border-color: var(--accent-brass);
+        box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.16);
+      }
+      .admin-panel textarea.form-control {
+        min-height: 112px;
+      }
+      .admin-panel input[type="file"].form-control {
+        padding: 8px 10px;
+      }
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+      .stat {
+        padding: 20px;
+        background: var(--secondary-concrete);
+        border-left: 4px solid var(--accent-brass);
+        border-radius: 0 4px 4px 0;
+      }
+      .stat strong {
+        display: block;
+        font: 800 2rem var(--font-heading);
+      }
+      .project-admin-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 16px 0;
+        border-bottom: 1px solid #e5e7eb;
+      }
+      .project-admin-row strong {
+        font-family: var(--font-heading);
+        font-size: 1.05rem;
+      }
+      .project-admin-row .btn {
+        min-width: 68px;
+      }
+      #projectStatusMessage,
+      #mediaStatus,
+      #progressStatus {
+        min-height: 20px;
+        color: #28754b;
+      }
+      .login-wrap {
+        max-width: 460px;
+        margin: 10vh auto 0;
+        padding: 36px;
+      }
+      .login-wrap .btn {
+        min-height: 46px;
+      }
+      @media (max-width: 700px) {
+        #admin-area {
+          padding: 20px 12px 40px;
+        }
+        .admin-panel,
+        .admin-header {
+          padding: 22px 18px;
+        }
+        .admin-header {
+          display: block !important;
+        }
+        .admin-header #logout {
+          margin-top: 18px;
+        }
+        .stats {
+          grid-template-columns: 1fr;
+        }
+        .project-admin-row {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ================= NAVBAR ================= -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+      <div class="container">
+        <!-- Brand Logo -->
+        <a
+          class="navbar-brand"
+          href="#home"
+          aria-label="GLS Construction home"
+          draggable="false"
+        >
+          <span class="brand-mark" aria-hidden="true">
+            <img
+              src="assets/icons/logo.png"
+              alt=""
+              width="42"
+              height="42"
+              decoding="async"
+              draggable="false"
+            />
+          </span>
+          <span>GLS Construction</span>
+        </a>
+
+        <!-- Mobile Toggle -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Nav Links -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#projects">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#package">Package</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#process">Process</a>
+            </li>
+          </ul>
+          <div class="d-flex mt-3 mt-lg-0">
+            <a
+              href="index.html#admin"
+              id="adminNavLink"
+              class="btn btn-primary-gls w-100"
+              target="_blank"
+              rel="noopener"
+              >Admin</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main id="main-content">
+      <!-- ================= HERO SECTION ================= -->
+      <section id="home" class="hero-section">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-6 mb-5 mb-lg-0">
+              <h1 class="hero-title">From Foundation to Handover.</h1>
+              <p class="hero-subtitle">
+                Professional construction and renovation services exclusively in
+                <strong>Dharmapuri</strong>. From planning and estimation to
+                complete construction and final handover.
+              </p>
+              <div class="d-flex flex-wrap gap-3 align-items-center">
+                <a href="#contact" class="btn btn-primary-gls"
+                  >Get Free Consultation</a
+                >
+                <a href="https://wa.me/919944158429" class="btn btn-whatsapp"
+                  >WhatsApp Us</a
+                >
+              </div>
+              <div class="mt-3">
+                <a
+                  href="#contact"
+                  class="text-decoration-underline text-muted small fw-medium"
+                  >Book a Site Visit</a
+                >
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div
+                id="completedProjectsCarousel"
+                class="carousel slide project-carousel"
+                data-bs-ride="carousel"
+                data-bs-interval="4200"
+                aria-label="Completed project images"
+              >
+                <div class="carousel-indicators">
+                  <button
+                    type="button"
+                    data-bs-target="#completedProjectsCarousel"
+                    data-bs-slide-to="0"
+                    class="active"
+                    aria-current="true"
+                    aria-label="Residential villa"
+                  ></button>
+                  <button
+                    type="button"
+                    data-bs-target="#completedProjectsCarousel"
+                    data-bs-slide-to="1"
+                    aria-label="Modern home"
+                  ></button>
+                  <button
+                    type="button"
+                    data-bs-target="#completedProjectsCarousel"
+                    data-bs-slide-to="2"
+                    aria-label="House exterior"
+                  ></button>
+                </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <div
+                      class="project-slide project-slide-villa"
+                      role="img"
+                      aria-label="Completed residential villa project"
+                    >
+                      <img
+                        class="project-slide-image"
+                        src="assets/images/h1.jpeg"
+                        alt="Completed contemporary residential villa with landscaped frontage"
+                        width="1400"
+                        height="1000"
+                        fetchpriority="high"
+                      />
+                      <div class="project-slide-caption">
+                        <span>Completed project</span
+                        ><strong>Contemporary Residential Villa</strong
+                        ><small>Dharmapuri · Turnkey Construction</small>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div
+                      class="project-slide project-slide-modern"
+                      role="img"
+                      aria-label="Completed modern home project"
+                    >
+                      <img
+                        class="project-slide-image"
+                        src="assets/images/h2.jpeg"
+                        alt="Completed modern single-family home with garden frontage"
+                        width="1400"
+                        height="1000"
+                        loading="lazy"
+                      />
+                      <div class="project-slide-caption">
+                        <span>Construction progress</span
+                        ><strong>Modern Family Home</strong
+                        ><small>Dharmapuri · Structure to finish</small>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div
+                      class="project-slide project-slide-exterior"
+                      role="img"
+                      aria-label="Completed house exterior project"
+                    >
+                      <img
+                        class="project-slide-image"
+                        src="assets/images/h3.jpeg"
+                        alt="Completed contemporary independent house with warm exterior lighting"
+                        width="1400"
+                        height="1000"
+                        loading="lazy"
+                      />
+                      <div class="project-slide-caption">
+                        <span>Completed project</span
+                        ><strong>Contemporary Independent Home</strong
+                        ><small>Dharmapuri · Planning to handover</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button
+                  class="carousel-control-prev"
+                  type="button"
+                  data-bs-target="#completedProjectsCarousel"
+                  data-bs-slide="prev"
+                  aria-label="Previous project"
+                >
+                  <span
+                    class="carousel-control-prev-icon"
+                    aria-hidden="true"
+                  ></span>
+                </button>
+                <button
+                  class="carousel-control-next"
+                  type="button"
+                  data-bs-target="#completedProjectsCarousel"
+                  data-bs-slide="next"
+                  aria-label="Next project"
+                >
+                  <span
+                    class="carousel-control-next-icon"
+                    aria-hidden="true"
+                  ></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= QUICK TRUST SECTION ================= -->
+      <section class="trust-bar">
+        <div class="container">
+          <div class="trust-content">
+            <div class="trust-copy">
+              <p class="trust-kicker">Why clients choose GLS</p>
+              <h2>Construction &amp; Renovation</h2>
+              <ul class="trust-list">
+                <li>Transparent Estimation</li>
+                <li>Complete Construction Support</li>
+                <li>Dharmapuri Service Area</li>
+                <li>Direct Customer Communication</li>
+              </ul>
+            </div>
+            <div
+              class="trust-metrics"
+              aria-label="GLS Construction achievements"
+            >
+              <div class="trust-metric trust-reveal">
+                <span class="trust-metric-icon" aria-hidden="true">▣</span>
+                <strong class="trust-number" data-counter-target="125"
+                  >1</strong
+                >
+                <span class="trust-suffix">+</span>
+                <span class="trust-label">Successfully Completed Projects</span>
+              </div>
+              <div class="trust-metric trust-reveal">
+                <span class="trust-metric-icon" aria-hidden="true">♧</span>
+                <strong class="trust-number" data-counter-target="50">1</strong>
+                <span class="trust-suffix">+</span>
+                <span class="trust-label">Qualified Employees</span>
+              </div>
+              <div class="trust-metric trust-reveal">
+                <span class="trust-metric-icon" aria-hidden="true">✧</span>
+                <strong class="trust-number" data-counter-target="25">1</strong>
+                <span class="trust-suffix">+</span>
+                <span class="trust-label">Years of Experience</span>
+              </div>
+              <div class="trust-metric trust-reveal">
+                <span class="trust-metric-icon" aria-hidden="true">✓</span>
+                <strong class="trust-number" data-counter-target="100"
+                  >1</strong
+                >
+                <span class="trust-suffix">%</span>
+                <span class="trust-label">Quality Guaranteed</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= ABOUT INTRO ================= -->
+      <section id="about" class="py-5 mt-4">
+        <div class="container">
+          <div class="about-layout">
+            <div class="about-visual">
+              <img
+                src="assets/images/site-team.jpg"
+                alt="GLS Construction team reviewing building plans on site"
+                loading="lazy"
+                width="900"
+                height="620"
+                decoding="async"
+              />
+            </div>
+            <div class="about-copy">
+              <p class="about-kicker">Who We Are</p>
+              <h2>25+ Years of Building Trust &amp; Excellence</h2>
+              <p>
+                At GLS Construction, we believe building a home is one of life's
+                greatest milestones. With a clear focus on quality, honest
+                estimates, and dependable delivery, we provide end-to-end
+                turnkey construction services across Dharmapuri.
+              </p>
+              <p>
+                From structural engineering and site planning to architectural
+                design and final handover, our dedicated project team supervises
+                every detail so your build stays clear, controlled, and built to
+                last.
+              </p>
+              <a href="#contact" class="btn btn-outline-gls about-cta"
+                >Learn More About Us <span aria-hidden="true">&#8594;</span></a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= SERVICES ================= -->
+      <section id="services" class="bg-light py-5">
+        <div class="container py-4">
+          <div class="text-center mb-5">
+            <h2>Our Services</h2>
+            <p class="text-muted">
+              Practical construction solutions for every stage of your project.
+            </p>
+          </div>
+
+          <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+              <div class="gls-card">
+                <div class="card-icon">
+                  <span aria-hidden="true">01</span>
+                </div>
+                <h4>Construction</h4>
+                <ul class="service-list">
+                  <li>Individual Houses</li>
+                  <li>Residential Buildings</li>
+                  <li>Villas</li>
+                  <li>Commercial Buildings</li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="gls-card">
+                <div class="card-icon">
+                  <span aria-hidden="true">02</span>
+                </div>
+                <h4>Renovation</h4>
+                <ul class="service-list">
+                  <li>House Renovation</li>
+                  <li>Kitchen Renovation</li>
+                  <li>Bathroom Renovation</li>
+                  <li>Flooring</li>
+                  <li>Painting</li>
+                  <li>Structural Renovation</li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="gls-card">
+                <div class="card-icon">
+                  <span aria-hidden="true">03</span>
+                </div>
+                <h4>Design & Planning</h4>
+                <ul class="service-list">
+                  <li>2D Floor Plans</li>
+                  <li>3D Elevation</li>
+                  <li>Interior Design</li>
+                  <li>Exterior Design</li>
+                  <li>Structural Planning</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="service-flow mt-4">
+            <div class="service-flow-heading">
+              <span class="service-flow-number">04</span>
+              <div>
+                <h4 class="mb-1">Complete Construction</h4>
+                <p class="text-muted mb-0">
+                  One clear process from the first plan to final handover.
+                </p>
+              </div>
+            </div>
+            <div
+              class="service-flow-steps"
+              aria-label="Complete construction process"
+            >
+              <span>Planning</span>
+              <b aria-hidden="true">→</b>
+              <span>Estimation</span>
+              <b aria-hidden="true">→</b>
+              <span>Construction</span>
+              <b aria-hidden="true">→</b>
+              <span>Finishing</span>
+              <b aria-hidden="true">→</b>
+              <span>Handover</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= PROJECTS ================= -->
+      <section id="projects" class="py-5 bg-light">
+        <div class="container">
+          <div class="text-center max-w-75 mx-auto mb-5">
+            <h2 class="mb-3">Our Projects</h2>
+            <p class="text-muted">
+              Take a look at some of our recent work across Dharmapuri. We take
+              pride in transparent construction, ensuring every home and
+              commercial building is delivered exactly as planned.
+            </p>
+          </div>
+          <div id="projectsGrid" class="row g-4">
+            <div class="col-12 text-center text-muted py-5">
+              Loading projects...
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div id="projectShowcase" class="project-showcase" aria-hidden="true">
+        <div class="project-showcase-backdrop" data-project-close></div>
+        <div
+          class="project-showcase-dialog"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="showcaseTitle"
+          tabindex="-1"
+        >
+          <button
+            class="project-showcase-close"
+            type="button"
+            data-project-close
+            aria-label="Close project showcase"
+          >
+            &times;
+          </button>
+          <div
+            id="showcaseVisual"
+            class="project-showcase-visual project-visual-villa"
+            role="img"
+            aria-label="Project image coming soon"
+          >
+            <span>Project image coming soon.</span>
+          </div>
+          <div
+            id="showcaseGallery"
+            class="project-gallery"
+            aria-label="Project gallery"
+          ></div>
+          <div class="project-showcase-content">
+            <div class="project-showcase-heading">
+              <div>
+                <span class="project-showcase-kicker">Project showcase</span>
+                <h2 id="showcaseTitle">Project information coming soon.</h2>
+              </div>
+              <span id="showcaseStatus" class="badge bg-secondary"
+                >Status coming soon.</span
+              >
+            </div>
+            <div class="project-detail-grid">
+              <div>
+                <span>Project Type</span
+                ><strong id="showcaseType"
+                  >Project information coming soon.</strong
+                >
+              </div>
+              <div>
+                <span>Location</span
+                ><strong id="showcaseLocation"
+                  >Project information coming soon.</strong
+                >
+              </div>
+              <div>
+                <span>Built-up Area</span
+                ><strong id="showcaseArea"
+                  >Project information coming soon.</strong
+                >
+              </div>
+              <div>
+                <span>Project Status</span
+                ><strong id="showcaseStatusText"
+                  >Project information coming soon.</strong
+                >
+              </div>
+            </div>
+            <p
+              id="showcaseDescription"
+              class="text-muted project-showcase-description"
+            >
+              Project information coming soon.
+            </p>
+
+            <section class="project-showcase-section">
+              <h3>Construction Journey</h3>
+              <div class="project-journey" aria-label="Construction journey">
+                <span>Planning</span><b aria-hidden="true">→</b
+                ><span>2D Plan</span><b aria-hidden="true">→</b
+                ><span>3D Elevation</span><b aria-hidden="true">→</b
+                ><span>Construction</span><b aria-hidden="true">→</b
+                ><span>Completed Project</span>
+              </div>
+              <p class="text-muted small mb-0">
+                Project journey details coming soon.
+              </p>
+            </section>
+
+            <section class="project-showcase-section">
+              <h3 id="showcaseProgressTitle">
+                Project Progress / Latest Update
+              </h3>
+              <div class="project-media-grid">
+                <div
+                  id="showcaseProgressImage"
+                  class="project-media-placeholder"
+                  role="img"
+                  aria-label="Project progress image coming soon"
+                >
+                  Project image coming soon.
+                </div>
+                <div
+                  id="showcaseProgressVideo"
+                  class="project-media-placeholder project-video-placeholder"
+                >
+                  Project video coming soon.
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= PACKAGE & CALCULATOR ================= -->
+      <section id="package" class="py-5">
+        <div class="container py-4">
+          <div class="row align-items-center g-5">
+            <!-- Package Info -->
+            <div class="col-lg-6 package-panel-left">
+              <h2>Instant Construction Cost Calculator</h2>
+              <p class="text-muted mb-4">
+                Get a simple approximate construction cost for your Dharmapuri
+                project.
+              </p>
+
+              <div class="package-highlight mb-4">
+                <span class="text-uppercase text-muted small fw-bold"
+                  >Starting At</span
+                >
+                <div class="price-tag">
+                  ₹2,100 <span class="fs-5 text-muted fw-normal">/ sq.ft</span>
+                </div>
+                <div class="mt-2 text-muted fw-medium">
+                  Current package rate: ₹2,100 / sq.ft
+                </div>
+              </div>
+            </div>
+
+            <!-- Calculator -->
+            <div class="col-lg-6 package-panel-right">
+              <div class="calculator-flip-card" id="home-calculator-card">
+                <div class="calculator-flip-inner">
+                  <div class="calculator-box calculator-face calculator-front">
+                    <h4 class="mb-3">Cost Calculator</h4>
+                    <p class="small text-muted mb-4">
+                      Enter the project details below for an approximate
+                      estimate.
+                    </p>
+                    <form id="home-calculator">
+                      <div class="mb-3">
+                        <label for="sqftArea" class="form-label fw-bold"
+                          >Built-up Area (sq.ft)</label
+                        >
+                        <input
+                          type="number"
+                          class="form-control form-control-lg"
+                          id="sqftArea"
+                          placeholder="e.g., 1200"
+                          min="1"
+                          required
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <label for="homeCalcFloors" class="form-label fw-bold"
+                          >Number of Floors</label
+                        >
+                        <select
+                          id="homeCalcFloors"
+                          class="form-select form-select-lg"
+                        >
+                          <option value="1">Ground Floor Only (G)</option>
+                          <option value="2">Ground + 1 Floor (G+1)</option>
+                          <option value="3">Ground + 2 Floors (G+2)</option>
+                        </select>
+                      </div>
+                      <div class="mb-3">
+                        <label for="homeCalcPackage" class="form-label fw-bold"
+                          >Construction Package</label
+                        >
+                        <select
+                          id="homeCalcPackage"
+                          class="form-select form-select-lg"
+                        >
+                          <option value="2100">
+                            Standard Package - ₹2,100 / sq.ft
+                          </option>
+                          <option value="2400">
+                            Premium Package - ₹2,400 / sq.ft
+                          </option>
+                          <option value="2800">
+                            Luxury Package - ₹2,800 / sq.ft
+                          </option>
+                        </select>
+                      </div>
+                      <button type="submit" class="btn btn-primary-gls w-100">
+                        Calculate Cost
+                      </button>
+                      <button
+                        type="submit"
+                        class="calculator-detail-button"
+                        aria-label="Show calculation details"
+                      >
+                        Details
+                      </button>
+                    </form>
+                  </div>
+                  <div
+                    class="calculator-face calculator-back"
+                    id="calc-result"
+                    aria-live="polite"
+                    aria-hidden="true"
+                  >
+                    <button
+                      type="button"
+                      class="calculator-flip-close"
+                      id="calc-result-close"
+                      aria-label="Return to calculator inputs"
+                    >
+                      &times;
+                    </button>
+                    <span class="small text-muted"
+                      >Approximate Construction Cost</span
+                    >
+                    <h3 id="calc-price">₹0</h3>
+                    <p class="small text-muted">
+                      Based on your selected area, floors, and package.
+                    </p>
+                    <h5>Want an accurate quotation?</h5>
+                    <a href="#contact" class="btn btn-primary-gls w-100"
+                      >Request Detailed Quotation</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="material-showcase-heading">
+            <p class="material-showcase-kicker">100% BRAND GUARANTEE</p>
+            <h2>Trusted Quality Brand Partners</h2>
+          </div>
+          <div
+            class="material-showcase"
+            aria-label="Construction materials and brands"
+          >
+            <div class="material-showcase-track">
+              <div class="material-brand" aria-label="Wood: Teak">
+                <span class="material-logo material-logo-teak"
+                  ><img src="assets/images/teak-logo.jpg" alt="Teak logo"
+                /></span>
+                <strong>Teak</strong>
+                <small>Wood</small>
+              </div>
+              <div class="material-brand" aria-label="Tiles: Kajaria">
+                <span class="material-logo material-logo-kajaria"
+                  ><img
+                    src="assets/images/kajaria-tiles-logo.png"
+                    alt="Kajaria Tiles logo"
+                  />
+                </span>
+                <strong>Kajaria</strong>
+                <small>Tiles</small>
+              </div>
+              <div class="material-brand" aria-label="Painting: Asian Paints">
+                <span class="material-logo material-logo-asian"
+                  ><img
+                    src="assets/images/asian-paints-logo.jpg"
+                    alt="Asian Paints logo"
+                /></span>
+                <strong>Asian Paints</strong>
+                <small>Painting</small>
+              </div>
+              <div class="material-brand" aria-label="Electrical: Kundan">
+                <span class="material-logo material-logo-kundan"
+                  ><img
+                    src="assets/images/kundan-cables-logo.png"
+                    alt="Kundan Electrical logo"
+                /></span>
+                <strong>Kundan</strong>
+                <small>Electrical</small>
+              </div>
+              <div class="material-brand" aria-label="Hardware: Godrej">
+                <span class="material-logo material-logo-godrej"
+                  ><img src="assets/images/godrej-logo.png" alt="Godrej logo" />
+                </span>
+                <strong>Godrej</strong>
+                <small>Hardware</small>
+              </div>
+              <div
+                class="material-brand"
+                aria-label="Cement: UltraTech and Ramco"
+              >
+                <span class="material-logo material-logo-cement"
+                  ><img
+                    src="assets/images/ultratech-cement-logo.png"
+                    alt="UltraTech Cement logo"
+                /></span>
+                <strong>UltraTech / Ramco</strong>
+                <small>Cement</small>
+              </div>
+              <div class="material-brand" aria-label="Steel: JSW">
+                <span class="material-logo material-logo-jsw"
+                  ><img
+                    src="assets/images/jsw-steel-logo.png"
+                    alt="JSW Steel logo"
+                  />
+                </span>
+                <strong>JSW</strong>
+                <small>Steel</small>
+              </div>
+              <div class="material-brand" aria-label="Plumbing: Astral">
+                <span class="material-logo material-logo-astral"
+                  ><img
+                    src="assets/images/astral-pipes-logo.png"
+                    alt="Astral Pipes logo"
+                  />
+                </span>
+                <strong>Astral</strong>
+                <small>Plumbing</small>
+              </div>
+
+              <div class="material-brand" aria-hidden="true">
+                <span class="material-logo material-logo-teak"
+                  ><img src="assets/images/teak-logo.jpg" alt="Teak logo"
+                /></span>
+                <strong>Teak</strong>
+                <small>Wood</small>
+              </div>
+              <div class="material-brand" aria-hidden="true">
+                <span class="material-logo material-logo-kajaria"
+                  ><img
+                    src="assets/images/kajaria-tiles-logo.png"
+                    alt="Kajaria Tiles logo"
+                  />
+                </span>
+                <strong>Kajaria</strong>
+                <small>Tiles</small>
+              </div>
+              <div class="material-brand" aria-hidden="true">
+                <span class="material-logo material-logo-asian"
+                  ><img
+                    src="assets/images/asian-paints-logo.jpg"
+                    alt="Asian Paints logo"
+                /></span>
+                <strong>Asian Paints</strong>
+                <small>Painting</small>
+              </div>
+              <div class="material-brand" aria-hidden="true">
+                <span class="material-logo material-logo-kundan"
+                  ><img
+                    src="assets/images/kundan-cables-logo.png"
+                    alt="Kundan Electrical logo"
+                /></span>
+                <strong>Kundan</strong>
+                <small>Electrical</small>
+              </div>
+              <div class="material-brand" aria-hidden="true">
+                <span class="material-logo material-logo-godrej"
+                  ><img src="assets/images/godrej-logo.png" alt="Godrej logo" />
+                </span>
+                <strong>Godrej</strong>
+                <small>Hardware</small>
+              </div>
+              <div class="material-brand" aria-hidden="true">
+                <span class="material-logo material-logo-cement"
+                  ><img
+                    src="assets/images/ultratech-cement-logo.png"
+                    alt="UltraTech Cement logo"
+                /></span>
+                <strong>UltraTech / Ramco</strong>
+                <small>Cement</small>
+              </div>
+              <div class="material-brand" aria-hidden="true">
+                <span class="material-logo material-logo-jsw"
+                  ><img
+                    src="assets/images/jsw-steel-logo.png"
+                    alt="JSW Steel logo"
+                  />
+                </span>
+                <strong>JSW</strong>
+                <small>Steel</small>
+              </div>
+              <div class="material-brand" aria-hidden="true">
+                <span class="material-logo material-logo-astral"
+                  ><img
+                    src="assets/images/astral-pipes-logo.png"
+                    alt="Astral Pipes logo"
+                  />
+                </span>
+                <strong>Astral</strong>
+                <small>Plumbing</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= PROCESS ================= -->
+      <section id="process" class="py-5 bg-light">
+        <div class="container">
+          <div class="text-center mb-5">
+            <h2>Our Construction Process</h2>
+            <p class="text-muted">
+              How we take your project from idea to reality.
+            </p>
+          </div>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-number">01</div>
+              <h4>Consultation</h4>
+              <p class="text-muted">
+                We meet to understand your requirement, budget, and vision for
+                the project.
+              </p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-number">02</div>
+              <h4>Site Visit</h4>
+              <p class="text-muted">
+                Our team visits and evaluates the construction site in
+                Dharmapuri.
+              </p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-number">03</div>
+              <h4>Planning</h4>
+              <p class="text-muted">
+                We analyze the requirements and prepare the initial project
+                plan.
+              </p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-number">04</div>
+              <h4>Design</h4>
+              <p class="text-muted">
+                Drafting of 2D floor plans and 3D elevations where required.
+              </p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-number">05</div>
+              <h4>Estimation</h4>
+              <p class="text-muted">
+                We prepare approximate material quantities and the total cost
+                estimate.
+              </p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-number">06</div>
+              <h4>Quotation</h4>
+              <p class="text-muted">
+                You receive a clear, detailed, and transparent project
+                quotation.
+              </p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-number">07</div>
+              <h4>Construction</h4>
+              <p class="text-muted">
+                We begin earthwork, foundation, and manage the complete
+                structural construction.
+              </p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-number">08</div>
+              <h4>Finishing</h4>
+              <p class="text-muted">
+                Executing flooring, painting, electrical wiring, plumbing, and
+                all finishing touches.
+              </p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-number">09</div>
+              <h4>Inspection</h4>
+              <p class="text-muted">
+                A thorough final inspection is conducted to ensure quality and
+                make any corrections.
+              </p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-number">10</div>
+              <h4>Handover</h4>
+              <p class="text-muted">
+                We complete the project, hand over the keys, and you step into
+                your new space.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= CONTACT ================= -->
+      <section id="contact" class="py-5">
+        <div class="container py-4">
+          <div class="text-center mb-5">
+            <p class="about-kicker">Start A Conversation</p>
+            <h2>Request a Consultation or Site Visit</h2>
+            <p class="text-muted mb-0">
+              Tell us what you are planning and our team will contact you
+              shortly.
+            </p>
+          </div>
+          <div class="row g-4 mb-5">
+            <div class="col-lg-4 col-md-6">
+              <a href="tel:+919944158429" class="text-decoration-none">
+                <div class="contact-card contact-card-neutral">
+                  <h1>📞</h1>
+                  <h4>Call GLS</h4>
+                  <p class="text-muted mb-0">+91 99441 58429</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <a href="https://wa.me/919944158429" class="text-decoration-none">
+                <div
+                  class="contact-card"
+                  style="background-color: var(--whatsapp-green); color: white"
+                >
+                  <h1>💬</h1>
+                  <h4 class="text-white">WhatsApp GLS</h4>
+                  <p class="text-white mb-0">Chat instantly with our team</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-12">
+              <div class="contact-card contact-card-neutral">
+                <h1>📍</h1>
+                <h4>Serving Dharmapuri</h4>
+                <p class="text-muted mb-0">
+                  Construction and renovation projects across Dharmapuri.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="row align-items-start g-5">
+            <div class="col-lg-4">
+              <h3 class="mb-3">Let us understand your project</h3>
+              <p class="text-muted">
+                Share your basic requirements for a site visit, preliminary
+                estimate, or complete construction consultation.
+              </p>
+              <div class="alert alert-warning mt-4 small" role="alert">
+                <strong>Note:</strong> We currently accept construction and
+                renovation projects within the Dharmapuri region.
+              </div>
+            </div>
+            <div class="col-lg-8">
+              <div class="bg-white p-4 p-md-5 border rounded gls-form">
+                <form id="contactForm">
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <label for="name">Your Name *</label
+                      ><input
+                        type="text"
+                        class="form-control"
+                        id="name"
+                        required
+                      />
+                    </div>
+                    <div class="col-md-6">
+                      <label for="phone">Phone Number *</label
+                      ><input
+                        type="tel"
+                        class="form-control"
+                        id="phone"
+                        required
+                      />
+                    </div>
+                    <div class="col-md-6">
+                      <label for="location"
+                        >Project Location (in Dharmapuri) *</label
+                      ><input
+                        type="text"
+                        class="form-control"
+                        id="location"
+                        placeholder="e.g., Pennagaram Road"
+                        required
+                      />
+                    </div>
+                    <div class="col-md-6">
+                      <label for="projectType">Project Type</label
+                      ><select class="form-select" id="projectType">
+                        <option value="New House Construction">
+                          New House Construction
+                        </option>
+                        <option value="Commercial Building">
+                          Commercial Building
+                        </option>
+                        <option value="House Renovation">
+                          House Renovation
+                        </option>
+                        <option value="Design & Planning Only">
+                          Design &amp; Planning Only
+                        </option>
+                        <option value="Other">Other</option>
+                      </select>
+                    </div>
+                    <div class="col-12">
+                      <label for="area">Approximate Built-up Area (sq.ft)</label
+                      ><input
+                        type="number"
+                        class="form-control"
+                        id="area"
+                        placeholder="If known"
+                      />
+                    </div>
+                    <div class="col-12">
+                      <label for="message">Message / Details *</label
+                      ><textarea
+                        class="form-control"
+                        id="message"
+                        rows="4"
+                        placeholder="Tell us briefly about your requirement..."
+                        required
+                      ></textarea>
+                    </div>
+                    <div class="col-12 mt-4">
+                      <button
+                        type="submit"
+                        class="btn btn-primary-gls w-100"
+                        id="submitBtn"
+                      >
+                        Send Enquiry
+                      </button>
+                    </div>
+                    <div
+                      class="col-12 mt-3"
+                      id="formStatus"
+                      style="display: none"
+                    ></div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= FINAL CTA ================= -->
+      <section class="py-5 bg-light border-top">
+        <div class="container text-center py-4">
+          <h2 class="mb-3">Ready to start your project in Dharmapuri?</h2>
+          <p class="text-muted mb-4">
+            Contact us today to schedule a site visit or discuss your
+            requirements.
+          </p>
+          <div class="d-flex justify-content-center gap-3">
+            <a href="#contact" class="btn btn-primary-gls"
+              >Contact GLS Construction</a
+            >
+            <a href="https://wa.me/919944158429" class="btn btn-whatsapp"
+              >Chat on WhatsApp</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <section id="admin-area" hidden aria-label="Admin dashboard">
+      <div class="admin-shell">
+        <section id="loginPanel" class="admin-panel login-wrap">
+          <h1>
+            <span class="brand-mark" aria-hidden="true">
+              <img
+                src="assets/icons/logo.png"
+                alt=""
+                width="42"
+                height="42"
+                decoding="async"
+              />
+            </span>
+            <span class="admin-brand-name">GLS <b>Construction</b></span> Admin
+          </h1>
+          <p class="text-muted">Sign in to manage projects and updates.</p>
+          <form id="loginForm">
+            <label class="form-label" for="username">Username</label>
+            <input class="form-control mb-3" id="username" required />
+            <label class="form-label" for="password">Password</label>
+            <input
+              class="form-control mb-3"
+              id="password"
+              type="password"
+              required
+            />
+            <button class="btn btn-primary-gls w-100">Sign In</button>
+            <div id="loginStatus" class="text-danger small mt-3"></div>
+          </form>
+          <form id="signupForm" hidden>
+            <label class="form-label" for="signupUsername">Username</label>
+            <input class="form-control mb-3" id="signupUsername" required />
+            <label class="form-label" for="signupPassword">Password</label>
+            <input
+              class="form-control mb-3"
+              id="signupPassword"
+              type="password"
+              minlength="8"
+              required
+            />
+            <button class="btn btn-primary-gls w-100">
+              Create Admin Account
+            </button>
+            <div id="signupStatus" class="text-danger small mt-3"></div>
+          </form>
+          <button
+            id="authModeToggle"
+            class="btn btn-link px-0 mt-2"
+            type="button"
+          >
+            Need an account? Sign Up
+          </button>
+        </section>
+
+        <section id="dashboard" hidden>
+          <header
+            class="admin-header d-flex justify-content-between align-items-center"
+          >
+            <div>
+              <h1 class="mb-1">
+                <span class="brand-mark" aria-hidden="true">
+                  <img
+                    src="assets/icons/logo.png"
+                    alt=""
+                    width="42"
+                    height="42"
+                    decoding="async"
+                  />
+                </span>
+                <span class="admin-brand-name">GLS <b>Construction</b></span>
+                Admin
+              </h1>
+              <p class="mb-0">Project management dashboard</p>
+            </div>
+            <button id="logout" class="btn btn-outline-light">Sign out</button>
+          </header>
+          <div class="stats mb-4">
+            <div class="stat">
+              <span>Total Projects</span><strong id="totalProjects">0</strong>
+            </div>
+            <div class="stat">
+              <span>Ongoing</span><strong id="ongoingProjects">0</strong>
+            </div>
+            <div class="stat">
+              <span>Completed</span><strong id="completedProjects">0</strong>
+            </div>
+          </div>
+
+          <section class="admin-panel">
+            <h2 id="formTitle">Add Project</h2>
+            <form id="projectForm">
+              <input type="hidden" id="projectId" />
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label">Project Name</label
+                  ><input class="form-control" id="projectName" required />
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Project Type</label
+                  ><input class="form-control" id="projectType" />
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Location</label
+                  ><input class="form-control" id="projectLocation" />
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Built-up Area</label
+                  ><input
+                    class="form-control"
+                    id="projectArea"
+                    type="number"
+                    min="1"
+                  />
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Status</label
+                  ><select class="form-select" id="projectStatus">
+                    <option value="ONGOING">Ongoing</option>
+                    <option value="COMPLETED">Completed</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <label class="form-label">Description</label
+                  ><textarea
+                    class="form-control"
+                    id="projectDescription"
+                    rows="3"
+                  ></textarea>
+                </div>
+              </div>
+              <div class="d-flex gap-2 mt-3">
+                <button class="btn btn-primary-gls">Save Project</button
+                ><button
+                  type="button"
+                  class="btn btn-outline-gls"
+                  id="resetForm"
+                >
+                  Clear
+                </button>
+              </div>
+              <div id="projectStatusMessage" class="small mt-3"></div>
+            </form>
+          </section>
+
+          <section class="admin-panel">
+            <h2>Projects</h2>
+            <div id="projectList">Loading projects...</div>
+          </section>
+
+          <section class="admin-panel">
+            <h2>Upload Project Media</h2>
+            <p class="text-muted small">
+              Upload real images or videos. Maximum file size: 25MB.
+            </p>
+            <form id="mediaForm">
+              <div class="row g-3">
+                <div class="col-md-4">
+                  <select class="form-select" id="mediaProject" required>
+                    <option value="">Select project</option>
+                  </select>
+                </div>
+                <div class="col-md-3">
+                  <select class="form-select" id="mediaType">
+                    <option value="IMAGE">Image</option>
+                    <option value="VIDEO">Video</option>
+                  </select>
+                </div>
+                <div class="col-md-3">
+                  <select class="form-select" id="mediaCategory">
+                    <option>GENERAL</option>
+                    <option>PLANNING</option>
+                    <option>PLAN_2D</option>
+                    <option>ELEVATION_3D</option>
+                    <option>CONSTRUCTION</option>
+                    <option>COMPLETED</option>
+                  </select>
+                </div>
+                <div class="col-md-2">
+                  <input
+                    class="form-control"
+                    id="mediaFile"
+                    type="file"
+                    accept="image/*,video/*"
+                    required
+                  />
+                </div>
+              </div>
+              <button class="btn btn-primary-gls mt-3">Upload Media</button>
+              <div id="mediaStatus" class="small mt-3"></div>
+            </form>
+          </section>
+
+          <section class="admin-panel">
+            <h2>Add Progress Update</h2>
+            <form id="progressForm">
+              <div class="row g-3">
+                <div class="col-md-4">
+                  <label class="form-label">Project</label
+                  ><select class="form-select" id="progressProject" required>
+                    <option value="">Select project</option>
+                  </select>
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label">Update Title</label
+                  ><input class="form-control" id="progressTitle" required />
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label">Update Date</label
+                  ><input
+                    class="form-control"
+                    id="progressDate"
+                    type="date"
+                    required
+                  />
+                </div>
+                <div class="col-12">
+                  <label class="form-label">Description</label
+                  ><textarea
+                    class="form-control"
+                    id="progressDescription"
+                    rows="3"
+                  ></textarea>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Progress Image: Choose File</label
+                  ><input
+                    class="form-control"
+                    id="progressImage"
+                    type="file"
+                    accept="image/*"
+                  />
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Progress Video: Choose File</label
+                  ><input
+                    class="form-control"
+                    id="progressVideo"
+                    type="file"
+                    accept="video/*"
+                  />
+                </div>
+              </div>
+              <button class="btn btn-primary-gls mt-3">
+                Publish Progress Update
+              </button>
+              <div id="progressStatus" class="small mt-3"></div>
+            </form>
+          </section>
+        </section>
+      </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <!-- Company Info -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h4 class="navbar-brand text-white mb-3">
+              <span class="brand-mark" aria-hidden="true">
+                <img
+                  src="assets/icons/logo.png"
+                  alt=""
+                  width="42"
+                  height="42"
+                  decoding="async"
+                />
+              </span>
+              <span
+                >GLS
+                <span style="color: var(--accent-brass)"
+                  >Construction</span
+                ></span
+              >
+            </h4>
+            <h5>Serving Dharmapuri</h5>
+            <p class="footer-service-area mb-3">
+              GLS Construction currently undertakes construction projects within
+              Dharmapuri.
+            </p>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="col-lg-2 col-md-6 mb-4">
+            <h5>Company</h5>
+            <a href="#about">About Us</a>
+            <a href="#projects">Our Projects</a>
+            <a href="#process">How We Work</a>
+            <a href="#contact">Contact Us</a>
+          </div>
+
+          <!-- Services -->
+          <div class="col-lg-2 col-md-6 mb-4">
+            <h5>Services</h5>
+            <a href="#services">New Construction</a>
+            <a href="#services">House Renovation</a>
+            <a href="#services">Design & Planning</a>
+            <a href="#package">Construction Packages</a>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="col-lg-2 col-md-6 mb-4 footer-contact-column">
+            <h5>Contact</h5>
+            <a href="tel:+919944158429">📞 +91 99441 58429</a>
+            <a
+              href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=glsconstructionteam%40gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              >✉ glsconstructionteam@gmail.com</a
+            >
+            <a
+              href="https://wa.me/919944158429"
+              class="mt-2 btn btn-whatsapp text-white text-start d-inline-block"
+              >WhatsApp Us</a
+            >
+          </div>
+
+          <!-- Location -->
+          <div class="col-lg-2 col-md-6 mb-4 footer-location-column">
+            <h5>Location</h5>
+            <p class="contact-location mt-3 small">
+              Dharmapuri, Tamil Nadu, India
+            </p>
+            <a
+              class="office-map-preview footer-location-map"
+              href="https://www.google.com/maps/place/12%C2%B007'43.7%22N+78%C2%B011'48.4%22E/@12.128793,78.1961243,213m/data=!3m2!1e3!4b1!4m4!3m3!8m2!3d12.128793!4d78.196768?entry=ttu&g_ep=EgoyMDI2MDkwMi4wIKXMDSoASAFQAw%3D%3D"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open GLS Construction office location in Google Maps"
+            >
+              <iframe
+                src="https://www.google.com/maps?q=12.128793,78.196768&z=18&output=embed"
+                title="GLS Construction office location"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                tabindex="-1"
+              ></iframe>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2026 GLS Construction. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ================= MOBILE BOTTOM BAR ================= -->
+    <div class="mobile-bottom-bar">
+      <a href="tel:+919944158429">Call</a>
+      <a href="https://wa.me/919944158429" class="bar-whatsapp">WhatsApp</a>
+      <a href="#contact">Consultation</a>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
+    <!-- Custom JS -->
+    <script src="assets/js/main.js" defer></script>
+    <script>
+      (() => {
+        const adminNavLink = document.getElementById("adminNavLink");
+        const adminArea = document.getElementById("admin-area");
+        if (!adminNavLink || !adminArea) return;
+
+        const configuredApiBase = document
+          .querySelector('meta[name="gls-api-base"]')
+          ?.content.trim()
+          .replace(/\/$/, "");
+        const localPage =
+          window.location.protocol === "file:" ||
+          ["localhost", "127.0.0.1"].includes(window.location.hostname);
+        const API =
+          configuredApiBase ||
+          (localPage && window.location.port !== "8080"
+            ? "http://localhost:8080/api"
+            : "/api");
+        let projects = [];
+        let csrfToken = "";
+        const $ = (id) => document.getElementById(id);
+        const publicSections = [
+          document.querySelector(".navbar"),
+          document.getElementById("main-content"),
+          document.querySelector(".footer"),
+          document.querySelector(".mobile-bottom-bar"),
+        ];
+
+        function showAdmin() {
+          publicSections.forEach((section) => {
+            if (section) section.hidden = true;
+          });
+          adminArea.hidden = false;
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+
+        adminNavLink.addEventListener("click", (event) => {
+          event.preventDefault();
+          window.open("index.html#admin", "_blank", "noopener");
+        });
+
+        async function ensureCsrfToken() {
+          if (csrfToken) return csrfToken;
+          const response = await fetch(API + "/auth/csrf", {
+            credentials: "include",
+            cache: "no-store",
+          });
+          if (!response.ok)
+            throw new Error("Unable to initialize security token");
+          csrfToken = (await response.json()).token;
+          return csrfToken;
+        }
+
+        async function request(path, options = {}) {
+          const method = (options.method || "GET").toUpperCase();
+          const headers = new Headers(options.headers || {});
+          if (!["GET", "HEAD", "OPTIONS"].includes(method))
+            headers.set("X-XSRF-TOKEN", await ensureCsrfToken());
+          const response = await fetch(API + path, {
+            ...options,
+            credentials: "include",
+            headers,
+          });
+          if (!response.ok)
+            throw new Error((await response.text()) || "Request failed");
+          return response.status === 204 ? null : response.json();
+        }
+
+        function fillProjectSelects() {
+          const options =
+            '<option value="">Select project</option>' +
+            projects
+              .map(
+                (project) =>
+                  `<option value="${project.id}">${project.name}</option>`,
+              )
+              .join("");
+          $("mediaProject").innerHTML = options;
+          $("progressProject").innerHTML = options;
+        }
+
+        async function loadProjects() {
+          projects = await request("/projects");
+          $("totalProjects").textContent = projects.length;
+          $("ongoingProjects").textContent = projects.filter(
+            (project) => project.status === "ONGOING",
+          ).length;
+          $("completedProjects").textContent = projects.filter(
+            (project) => project.status === "COMPLETED",
+          ).length;
+          $("projectList").innerHTML = projects.length
+            ? projects
+                .map(
+                  (project) =>
+                    `<div class="project-admin-row"><div><strong>${project.name}</strong><div class="text-muted small">${project.status} · ${project.location || "Location coming soon."}</div></div><div><button class="btn btn-sm btn-outline-gls" onclick="editProject(${project.id})">Edit</button> <button class="btn btn-sm btn-danger" onclick="deleteProject(${project.id})">Delete</button></div></div>`,
+                )
+                .join("")
+            : '<p class="text-muted mb-0">No projects yet.</p>';
+          fillProjectSelects();
+        }
+
+        window.editProject = (id) => {
+          const project = projects.find((item) => item.id === id);
+          if (!project) return;
+          $("projectId").value = project.id;
+          $("projectName").value = project.name || "";
+          $("projectType").value = project.projectType || "";
+          $("projectLocation").value = project.location || "";
+          $("projectArea").value = project.builtUpArea || "";
+          $("projectStatus").value = project.status;
+          $("projectDescription").value = project.description || "";
+          $("formTitle").textContent = "Edit Project";
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        };
+
+        window.deleteProject = async (id) => {
+          if (!confirm("Delete this project and its media?")) return;
+          try {
+            await request(`/projects/${id}`, { method: "DELETE" });
+            await loadProjects();
+          } catch (error) {
+            alert(error.message);
+          }
+        };
+
+        function showDashboard() {
+          $("loginPanel").hidden = true;
+          $("dashboard").hidden = false;
+          loadProjects().catch((error) => {
+            $("loginStatus").textContent = error.message;
+          });
+        }
+
+        $("loginForm").onsubmit = async (event) => {
+          event.preventDefault();
+          try {
+            await request("/auth/login", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                username: $("username").value,
+                password: $("password").value,
+              }),
+            });
+            showDashboard();
+          } catch {
+            $("loginStatus").textContent =
+              "Invalid credentials or backend unavailable.";
+          }
+        };
+
+        $("authModeToggle").onclick = () => {
+          const signupMode = $("signupForm").hidden;
+          $("loginForm").hidden = signupMode;
+          $("signupForm").hidden = !signupMode;
+          $("loginStatus").textContent = "";
+          $("signupStatus").textContent = "";
+          $("authModeToggle").textContent = signupMode
+            ? "Already have an account? Login"
+            : "Need an account? Sign Up";
+        };
+
+        $("signupForm").onsubmit = async (event) => {
+          event.preventDefault();
+          try {
+            await request("/auth/signup", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                username: $("signupUsername").value,
+                password: $("signupPassword").value,
+              }),
+            });
+            showDashboard();
+          } catch (error) {
+            $("signupStatus").textContent = error.message;
+          }
+        };
+
+        $("logout").onclick = async () => {
+          await request("/auth/logout", { method: "POST" });
+          window.location.reload();
+        };
+
+        $("projectForm").onsubmit = async (event) => {
+          event.preventDefault();
+          const id = $("projectId").value;
+          try {
+            await request(id ? `/projects/${id}` : "/projects", {
+              method: id ? "PUT" : "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                name: $("projectName").value,
+                projectType: $("projectType").value,
+                location: $("projectLocation").value,
+                builtUpArea: $("projectArea").value
+                  ? Number($("projectArea").value)
+                  : null,
+                status: $("projectStatus").value,
+                description: $("projectDescription").value,
+              }),
+            });
+            $("resetForm").click();
+            await loadProjects();
+          } catch (error) {
+            $("projectStatusMessage").textContent = error.message;
+          }
+        };
+
+        $("resetForm").onclick = () => {
+          $("projectForm").reset();
+          $("projectId").value = "";
+          $("formTitle").textContent = "Add Project";
+        };
+
+        $("mediaForm").onsubmit = async (event) => {
+          event.preventDefault();
+          const data = new FormData();
+          data.append("file", $("mediaFile").files[0]);
+          data.append("mediaType", $("mediaType").value);
+          data.append("category", $("mediaCategory").value);
+          try {
+            await request(`/projects/${$("mediaProject").value}/media`, {
+              method: "POST",
+              body: data,
+            });
+            $("mediaStatus").textContent = "Media uploaded.";
+            await loadProjects();
+          } catch (error) {
+            $("mediaStatus").textContent = error.message;
+          }
+        };
+
+        $("progressForm").onsubmit = async (event) => {
+          event.preventDefault();
+          const data = new FormData();
+          data.append("title", $("progressTitle").value);
+          data.append("description", $("progressDescription").value);
+          data.append("updateDate", $("progressDate").value);
+          if ($("progressImage").files[0])
+            data.append("image", $("progressImage").files[0]);
+          if ($("progressVideo").files[0])
+            data.append("video", $("progressVideo").files[0]);
+          try {
+            await request(
+              `/projects/${$("progressProject").value}/progress-upload`,
+              { method: "POST", body: data },
+            );
+            $("progressStatus").textContent = "Progress update published.";
+            $("progressForm").reset();
+            await loadProjects();
+          } catch (error) {
+            $("progressStatus").textContent = error.message;
+          }
+        };
+
+        if (window.location.hash === "#admin") showAdmin();
+      })();
+    </script>
+  </body>
+</html>

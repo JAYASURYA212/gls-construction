@@ -1,0 +1,28 @@
+# Maven
+backend/target/
+target/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Java
+*.class
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Local uploads
+uploads/
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.dbbackend/src/main/resources/application-local.properties
+database/create-app-user.sql
+backend/src/main/resources/application.properties
