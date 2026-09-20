@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="gls-api-base" content="" />
+    <!-- API base is selected automatically by main.js -->
 
     <!-- SEO & Meta Tags -->
     <title>GLS Construction | Building & Renovation in Dharmapuri</title>
@@ -1630,7 +1630,7 @@
         const API =
           configuredApiBase ||
           (localPage && window.location.port !== "8080"
-            ? "http://localhost:8080/api"
+            ? "https://gls-construction-backend.onrender.com/api"
             : "/api");
         let projects = [];
         let csrfToken = "";
