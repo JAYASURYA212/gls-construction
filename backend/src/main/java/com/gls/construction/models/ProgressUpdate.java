@@ -1,4 +1,4 @@
-package com.gls.construction.models;
+mvn clean packagepackage com.gls.construction.models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
