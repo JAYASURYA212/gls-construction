@@ -1670,15 +1670,19 @@
         async function request(path, options = {}) {
           const method = (options.method || "GET").toUpperCase();
           const headers = new Headers(options.headers || {});
+
           if (!["GET", "HEAD", "OPTIONS"].includes(method))
             headers.set("X-XSRF-TOKEN", await ensureCsrfToken());
-          const response = await fetch(API + path, {
+
+          const response = await fetch(API_BASE + path, {
             ...options,
             credentials: "include",
             headers,
           });
+
           if (!response.ok)
             throw new Error((await response.text()) || "Request failed");
+
           return response.status === 204 ? null : response.json();
         }
 
