@@ -13,6 +13,18 @@ const API_BASE =
     ? "http://localhost:8080/api"
     : "https://gls-construction-backend.onrender.com/api");
 const placeholder = "Project information coming soon.";
+
+function resolveMediaUrl(url) {
+  if (!url) return "";
+
+  if (/^https?:\/\//i.test(url)) {
+    return url;
+  }
+
+  const backendBase = API_BASE.replace(/\/api\/?$/, "");
+
+  return `${backendBase}${url.startsWith("/") ? url : `/${url}`}`;
+}
 let csrfTokenPromise;
 
 function getCsrfToken() {
@@ -268,7 +280,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const imageUrl = images[0]?.mediaUrl;
     elements.visual.className = "project-showcase-visual";
     elements.visual.innerHTML = imageUrl
-      ? `<img src="${API_BASE.replace("/api", "")}${imageUrl}" alt="${project.name || "Project"} image" loading="lazy" decoding="async">`
+      ? `<img src="${resolveMediaUrl(imageUrl)}" alt="${project.name || "Project"} image" loading="lazy" decoding="async">`
       : `<span>Project image coming soon.</span>`;
     const gallery = document.getElementById("showcaseGallery");
     if (gallery)
@@ -277,7 +289,7 @@ document.addEventListener("DOMContentLoaded", () => {
           ? images
               .map(
                 (item) =>
-                  `<img src="${API_BASE.replace("/api", "")}${item.mediaUrl}" alt="${item.category} project image" loading="lazy" decoding="async">`,
+                  `<img src="${resolveMediaUrl(item.mediaUrl)}" alt="${item.category} project image" loading="lazy" decoding="async">`,
               )
               .join("")
           : "";
@@ -294,11 +306,11 @@ document.addEventListener("DOMContentLoaded", () => {
         latest?.title || "Project Progress / Latest Update";
     if (progressImage)
       progressImage.innerHTML = latest?.imageUrl
-        ? `<img src="${API_BASE.replace("/api", "")}${latest.imageUrl}" alt="Latest project progress" loading="lazy" decoding="async">`
+        ? `<img src="${resolveMediaUrl(latest.imageUrl)}" alt="Latest project progress" loading="lazy" decoding="async">`
         : "Project image coming soon.";
     if (progressVideo)
       progressVideo.innerHTML = latest?.videoUrl
-        ? `<video controls src="${API_BASE.replace("/api", "")}${latest.videoUrl}"></video>`
+        ? `<video controls src="${resolveMediaUrl(latest.videoUrl)}"></video>`
         : "Project video coming soon.";
     showcase.classList.add("is-open");
     showcase.setAttribute("aria-hidden", "false");
@@ -322,7 +334,7 @@ document.addEventListener("DOMContentLoaded", () => {
           (item) => item.mediaType === "IMAGE" && item.mediaUrl,
         );
         const visual = image
-          ? `<div class="project-visual project-visual-uploaded"><img src="${API_BASE.replace("/api", "")}${image.mediaUrl}" alt="${project.name || "Project"} image" loading="lazy" decoding="async"><span class="project-visual-label">${project.projectType || "Project"}</span></div>`
+          ? `<div class="project-visual project-visual-uploaded"><img src="${resolveMediaUrl(image.mediaUrl)}" alt="${project.name || "Project"} image" loading="lazy" decoding="async"><span class="project-visual-label">${project.projectType || "Project"}</span></div>`
           : `<div class="project-visual project-visual-villa"><span class="project-visual-label">${project.projectType || "Project"}</span></div>`;
         return `<div class="col-lg-4 col-md-6"><button class="gls-card project-card p-0 h-100 overflow-hidden" type="button" aria-label="Open project showcase">${visual}<div class="p-4"><div class="mb-2"><span class="badge ${project.status === "COMPLETED" ? "bg-success" : "bg-warning text-dark"}">${project.status || "Status coming soon"}</span></div><h4 class="mb-3">${project.name || placeholder}</h4><ul class="list-unstyled text-muted small mb-3"><li class="mb-1"><strong>📍 Location:</strong> ${project.location || placeholder}</li><li class="mb-1"><strong>📐 Area:</strong> ${project.builtUpArea ? `${project.builtUpArea} sq.ft` : placeholder}</li><li class="mb-1"><strong>🏗️ Type:</strong> ${project.projectType || placeholder}</li></ul><p class="text-muted small mb-0">${project.description || placeholder}</p></div></button></div>`;
       })
